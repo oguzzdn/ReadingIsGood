@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: com.example.demo.ServiceTests.CustomerServiceTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 2.566 s <<< FAILURE! - in com.example.demo.ServiceTests.CustomerServiceTest
+testGetCustomerById  Time elapsed: 0.013 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.example.demo.entity.CustomerEntity.getId()" because "this.customerEntity" is null
+	at com.example.demo.ServiceTests.CustomerServiceTest.testGetCustomerById(CustomerServiceTest.java:104)
+
+testAddCustomer  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.example.demo.entity.CustomerEntity.getEmail()" because "this.customerEntity" is null
+	at com.example.demo.ServiceTests.CustomerServiceTest.testAddCustomer(CustomerServiceTest.java:58)
+
+testConvertToEntity  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.example.demo.dto.CustomerDTO.getId()" because "customerDto" is null
+	at com.example.demo.ServiceTests.CustomerServiceTest.testConvertToEntity(CustomerServiceTest.java:97)
+
+testAddCustomerWithExistingEmail  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.example.demo.entity.CustomerEntity.getEmail()" because "this.customerEntity" is null
+	at com.example.demo.ServiceTests.CustomerServiceTest.testAddCustomerWithExistingEmail(CustomerServiceTest.java:69)
+
+testConvertToDTO  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.example.demo.entity.CustomerEntity.getId()" because "customerEntity" is null
+	at com.example.demo.ServiceTests.CustomerServiceTest.testConvertToDTO(CustomerServiceTest.java:90)
+

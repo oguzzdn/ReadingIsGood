@@ -1,0 +1,354 @@
+{
+	"info": {
+		"_postman_id": "a06bed35-9d8c-4abc-b274-178104a82070",
+		"name": "ReadingIsGoodRequests",
+		"description": "Postman's [scripting](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) feature allows you to bulid conditional workflows using a collection. You can do branching and loop over a set of requests.\n\nThis collection shows how you can loop over an array of data and setup a conditional workflow based on the response while changing the parameters using the Collection Runner and the `postman.setNextRequest()` function.\n\n**How to use this template:**\n\n1. Open the collection and click on the \"View more option\" icon.\n2. Click \"Run Collection\" to open the collection runner.\n3. Click on \"Run Conditional Workflow\" to run the collection.\n    \n\n<img src=\"https://content.pstmn.io/d21cb133-1e04-41f6-9ef6-9aaf85df4e82/aW1hZ2UucG5n\" alt=\"Workflow%20depicting%20the%20collection%20execution\" width=\"638\" height=\"720\">\n\n### Modifying the data\n\nYou can find the data array in the collection variables section which you can navigate to by clicking on the collection name in the sidebar and then selecting the Variables tab.\n\nThe data array follows this structure:\n\n``` json\n[\n    {\n        \"username\": \"\",\n        \"name\": \"\",\n        \"role\": \"\"\n    },\n    ...\n]\n\n```",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26686820"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/book",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"title\": \"The Fellowship of the Ring\",\n        \"author\": \"J.R.R. Tolkien\",\n        \"description\": \"n the first book of the Lord of the Rings series, Frodo Baggins inherits a powerful ring that has the potential to destroy the world if it falls into the wrong hands.\",\n        \"price\": 70.00,\n        \"stock\": 8\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/book",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBookStock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/book/bookId=3/newStock=11",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"book",
+						"bookId=3",
+						"newStock=11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCustomer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\": \"Oguzhan Ozden\",\n\"email\": \"oozden@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerId\": 1,\n    \"orderDetailEntities\": [\n        {\n            \"bookId\": 1,\n            \"count\": 2\n        },\n        {\n            \"bookId\": 2,\n            \"count\": 1\n        }\n    ],\n    \"orderDate\": \"2023-01-01T15:20:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrdersOfCustomer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6InVzZXIiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjgwNDQxMzkyLCJleHAiOjE2ODA0NDE3NTJ9.9fDLmKcMi26cbJYUCXqis1DSgk69GWIqsejLhTvU03Epf4WuxaJ7FoCO63somonVImXZhMGXQOyGiAFatg5g0g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customer/1/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrderDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrdersByDate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJpZCIsInN1YiI6InVzZXIiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjgwNDQxMzkyLCJleHAiOjE2ODA0NDE3NTJ9.9fDLmKcMi26cbJYUCXqis1DSgk69GWIqsejLhTvU03Epf4WuxaJ7FoCO63somonVImXZhMGXQOyGiAFatg5g0g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"startDate\": \"2023-01-01T15:20:00\",\n    \"endDate\":\"2023-05-01T14:20:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/getOrdersByDateInterval",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"getOrdersByDateInterval"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStatistic",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/statistic/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"statistic",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{BEARERTOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.sendRequest({",
+					"    url: \"http://localhost:8080/v1/tokenApi/getToken?name=user&password=secret\",",
+					"    method: 'POST',",
+					"    header: {",
+					"        'Content-Type':'application/json',",
+					"        'Authorization':'Bearer '",
+					"    },",
+					"    ",
+					"},",
+					"    (err, res) => {",
+					"        // Set BEARERTOKEN",
+					"        //console.log(res.json().access_token)",
+					"        pm.globals.set(\"BEARERTOKEN\", res.json().access_token)",
+					"        // console.log(res.json());",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "users",
+			"value": "[{\"username\": \"flash\",\"name\": \"Barry Allen\",\"role\": \"Superhero\"},{\"username\": \"wonder_woman\",\"name\": \"Diana Prince\",\"role\":\"Superhero\"},{\"username\": \"batman\",\"name\": \"Bruce Wayne\",\"role\": \"Superhero\"}]"
+		},
+		{
+			"key": "results",
+			"value": "[]",
+			"type": "string"
+		},
+		{
+			"key": "successAPIUrl",
+			"value": "https://postman-echo.com/post",
+			"type": "string"
+		},
+		{
+			"key": "failureAPIUrl",
+			"value": "https://postman-echo.com/post",
+			"type": "string"
+		},
+		{
+			"key": "idx",
+			"value": "0"
+		},
+		{
+			"key": "username",
+			"value": ""
+		},
+		{
+			"key": "name",
+			"value": ""
+		},
+		{
+			"key": "role",
+			"value": ""
+		}
+	]
+}

@@ -28,9 +28,9 @@ There are rules in updating the stock amount of book. Update amount should be va
 
 User can add orders with two foreign keys, book id and customer id. The order can contain multiple books with multiple quantities. If the book id or customer id does not exist in the database, the application returns an error message, and the order object does not persist. Also, if one of the ordered books is out of stock or has less stock than the requested quantity, the application returns an error message, and the order object does not persist.
 
-- User can query orders with id and get all the details of the orders.
+User can query orders with id and get all the details of the orders.
 
-- User can get orders by a date interval. They must pass two date parameters without time, the start date and end date, respectively.
+User can get orders by a date interval. They must pass two date parameters without time, the start date and end date, respectively.
 ## Stats Endpoint
 - Stats Endpoint:
 

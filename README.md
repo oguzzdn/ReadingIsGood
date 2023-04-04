@@ -46,7 +46,7 @@ The application is running on the default port:
 ```bash
   http://localhost:8080
 ```
-Reading is Good’s case work includes a Dockerfile. To build the project, use the following command:
+Reading is Good’s case work includes a Dockerfile. To build the project, use the following command in "demo" file:
 
 ```bash
   docker-compose up -d --build

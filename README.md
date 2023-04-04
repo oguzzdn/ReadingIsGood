@@ -17,7 +17,7 @@ The email property of customers is unique. If a customer tries to add an email a
 
 - Adding a book with an author
 - Updating the stock amount of a book
-Getting the details of the particular book by id value
+
 There are rules in updating the stock amount of book. Update amount should be valid and greater than zero, and if not, the application returns an error message and does not update the stock amount.
 ## Order Endpoint
 - Adding orders

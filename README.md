@@ -37,7 +37,7 @@ User can get orders by a date interval. They must pass two date parameters witho
 - Getting monthly stats of customers
 
 In this endpoint, users can query the monthly stats of a customer. With the customer id, the application gets the orders of the customer and returns cumulative stats of the orders.
-## Runing
+## Running
 
 To run the application, you can find example requests under the request folder. These requests must be imported into Postman by using the “File -> Import” option. Then drag the requests to the opening window, and the request will be ready to use.
 

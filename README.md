@@ -4,6 +4,15 @@
 
 ReadingIsGood is an online books retail firm that aims to deliver books to customers on the same day by using a centralized warehouse. To support their vision operations, they require stock consistency. Reading is Good is a user-friendly and efficient small-scale book delivery system that is designed to help ReadingIsGood manage the different aspects of their operations, including adding books, customers, and authors inside books, placing orders, and retrieving book, order, and monthly order details. This application is useful for anyone who wants to set up an online book retail business and enhance their operations with an organized and automated system.
 
+Used technologies in this project are:
+
+- PostgreSQL
+- Java Spring Boot
+- Docker
+- Maven
+- Swagger
+
+
 The application has different endpoints with specific functionalities.
 
 ## Customer Endpoint

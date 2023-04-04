@@ -30,7 +30,7 @@ User can add orders with two foreign keys, book id and customer id. The order ca
 
 User can query orders with id and get all the details of the orders.
 
-User can get orders by a date interval. They must pass two date parameters without time, the start date and end date, respectively.
+User can get orders by a date interval. They must pass two date parameters, the start date and end date, respectively.
 ## Stats Endpoint
 - Stats Endpoint:
 
@@ -46,7 +46,7 @@ The application is running on the default port:
 ```bash
   http://localhost:8080
 ```
-Reading is Good’s case work includes a Dockerfile. To build the project, use the following command in "demo" file:
+Reading is Good’s case work includes a Dockerfile. To build the project, use the following command in "demo" folder:
 
 ```bash
   docker-compose up -d --build

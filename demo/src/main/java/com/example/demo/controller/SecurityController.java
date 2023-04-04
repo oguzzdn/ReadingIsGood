@@ -44,7 +44,7 @@ public class SecurityController {
     }
 
     private String getJWTToken(String username) {
-        String secretKey = "sec22RetKey11qawr";//SnASfXPwu9SsYah9
+        String secretKey = "sec22RetKey11qawr";
         List<GrantedAuthority> grantedAuthorities = AuthorityUtils
                 .commaSeparatedStringToAuthorityList("ROLE_USER");
         String token = Jwts.builder().setId("id").setSubject(username)

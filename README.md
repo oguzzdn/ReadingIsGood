@@ -12,13 +12,13 @@ The application has different endpoints with specific functionalities.
 
 - Getting orders of a particular customer
 
-- The email property of customers is unique. If a customer tries to add an email address that already exists in the database, the application returns an error message and does not persist the customer object to the database.
+The email property of customers is unique. If a customer tries to add an email address that already exists in the database, the application returns an error message and does not persist the customer object to the database.
 ## Book Endpoint
 
 - Adding a book with an author
 - Updating the stock amount of a book
 - Getting the details of the particular book by id value
-- There are rules in updating the stock amount of book. Update amount should be valid and greater than zero, and if not, the application returns an error message and does not update the stock amount.
+There are rules in updating the stock amount of book. Update amount should be valid and greater than zero, and if not, the application returns an error message and does not update the stock amount.
 ## Order Endpoint
 - Adding orders
 
@@ -26,7 +26,7 @@ The application has different endpoints with specific functionalities.
 
 - Getting orders by date interval
 
-- User can add orders with two foreign keys, book id and customer id. The order can contain multiple books with multiple quantities. If the book id or customer id does not exist in the database, the application returns an error message, and the order object does not persist. Also, if one of the ordered books is out of stock or has less stock than the requested quantity, the application returns an error message, and the order object does not persist.
+User can add orders with two foreign keys, book id and customer id. The order can contain multiple books with multiple quantities. If the book id or customer id does not exist in the database, the application returns an error message, and the order object does not persist. Also, if one of the ordered books is out of stock or has less stock than the requested quantity, the application returns an error message, and the order object does not persist.
 
 - User can query orders with id and get all the details of the orders.
 
@@ -36,7 +36,7 @@ The application has different endpoints with specific functionalities.
 
 - Getting monthly stats of customers
 
-- In this endpoint, users can query the monthly stats of a customer. With the customer id, the application gets the orders of the customer and returns cumulative stats of the orders.
+In this endpoint, users can query the monthly stats of a customer. With the customer id, the application gets the orders of the customer and returns cumulative stats of the orders.
 ## Runing
 
 To run the application, you can find example requests under the request folder. These requests must be imported into Postman by using the “File -> Import” option. Then drag the requests to the opening window, and the request will be ready to use.
